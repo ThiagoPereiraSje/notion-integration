@@ -1,0 +1,14 @@
+{
+  "name": "notion-integration",
+  "version": "1.0.0",
+  "description": "Projeto para testar a ingração com notion",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Thiago Pereira",
+  "license": "ISC",
+  "dependencies": {
+    "@notionhq/client": "^0.4.13"
+  }
+}
