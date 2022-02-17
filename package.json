@@ -9,6 +9,7 @@
   "author": "Thiago Pereira",
   "license": "ISC",
   "dependencies": {
-    "@notionhq/client": "^0.4.13"
+    "@notionhq/client": "^0.4.13",
+    "dotenv": "^16.0.0"
   }
 }

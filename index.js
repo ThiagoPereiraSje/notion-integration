@@ -1,7 +1,9 @@
 const { Client } = require("@notionhq/client");
+const dotenv = require("dotenv");
 
-const NOTION_KEY = "secret_UYrVLdUeAeFG1uSLoAKj5Kj9KIZvmAVrtz0DhyzakpF";
-const NOTION_DB_ID = "c8523a07b8e24b34b40d52ed3d5f2132";
+dotenv.config();
+const NOTION_KEY = process.env.NOTION_KEY;
+const NOTION_DB_ID = process.env.NOTION_DB_ID;
 
 const notion = new Client({ auth: NOTION_KEY });
 
