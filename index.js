@@ -7,7 +7,7 @@ const NOTION_DB_ID = process.env.NOTION_DB_ID;
 
 const notion = new Client({ auth: NOTION_KEY });
 
-async function addItem(text) {
+async function addItem(title, content) {
   try {
     const response = await notion.pages.create({
       parent: { database_id: NOTION_DB_ID },
@@ -16,7 +16,16 @@ async function addItem(text) {
           title: [
             {
               text: {
-                content: text,
+                content: title,
+              },
+            },
+          ],
+        },
+        content: {
+          rich_text: [
+            {
+              text: {
+                content: content,
               },
             },
           ],
@@ -31,4 +40,4 @@ async function addItem(text) {
   }
 }
 
-addItem("1 item no banco de dados");
+addItem("Novo Pedido", "Conteúdo do Pedido");
