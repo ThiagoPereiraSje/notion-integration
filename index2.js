@@ -1,9 +1,16 @@
 require("dotenv").config();
+const { Client } = require("@notionhq/client");
 
 const NOTION_KEY = process.env.NOTION_KEY;
-const NOTION_DB_ID = "44ecea7f659747f0ab9dba9246a5fc62";
+const NOTION_DB_ID = process.env.NOTION_DB_ID;
 
-const { Client } = require("@notionhq/client");
+if (!NOTION_KEY) {
+  throw new Error("Integration Token not Informed!");
+}
+
+if (!NOTION_DB_ID) {
+  throw new Error("Database ID not Informed!");
+}
 
 const notion = new Client({ auth: NOTION_KEY });
 
